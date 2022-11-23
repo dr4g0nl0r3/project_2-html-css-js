@@ -7,6 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=PT+Sans&  display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/slick.css">
     <link rel="stylesheet" href="assets/css/style.css">
     <title>CenterLogistic</title>
 </head>
@@ -171,7 +172,7 @@
                     </ul>
                 </div> <!-- ./clients__logos -->
                 <div class="clients__reviews">
-                    <div class="reviews">
+                    <div class="reviews" id="reviewsSlider">
                         <div class="reviews__item">
                             <div class="reviews__header">
                                 <img class="reviews__photo" src="https://via.placeholder.com/100x100" alt="">
@@ -185,8 +186,21 @@
                                 <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestiae dolorem, laboriosam cum, hic laborum atque modi cumque ullam repellendus nam mollitia excepturi maxime aperiam aliquam voluptatum? Aspernatur iusto incidunt optio!</p>
                             </div>
                         </div>
-                    </div>
-                </div>
+                        <div class="reviews__item">
+                            <div class="reviews__header">
+                                <img class="reviews__photo" src="https://via.placeholder.com/100x100" alt="">
+                                    <div class="reviews__header-content">
+                                    <div class="reviews__name">John Smith</div>
+                                    <div class="reviews__company">FOX Hub CEO</div>
+                                </div>
+                            </div>
+                            <div class="reviews__content">
+                                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestiae dolorem, laboriosam cum, hic laborum atque modi cumque ullam repellendus nam mollitia excepturi maxime aperiam aliquam voluptatum? Aspernatur iusto incidunt optio!</p>
+                                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestiae dolorem, laboriosam cum, hic laborum atque modi cumque ullam repellendus nam mollitia excepturi maxime aperiam aliquam voluptatum? Aspernatur iusto incidunt optio!</p>
+                            </div>
+                        </div>
+                    </div> <!-- ./reviews -->
+                </div> <!-- ./clients__reviews -->
             </div> <!-- ./clients -->
 
             <button class="btn btn--orange btn--shadow" type="button" data-modal="#becomeClientModal">
@@ -434,6 +448,7 @@
 
 <!-- JavaScript -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<script src="assets/js/slick.min.js"></script>
 <script src="assets/js/app.js"></script>
 
 </body>
