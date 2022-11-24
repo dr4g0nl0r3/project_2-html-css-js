@@ -9,7 +9,8 @@ body {
     -moz-osx-font-smoothing: grayscale;
 }
 
-body.no-scroll {
+body.no-scroll,
+body.show-nav {
     overflow: hidden;
 }
 
@@ -76,7 +77,8 @@ ul, ol {
     transition: background .2s linear;
 }
 
-.header--dark {
+.header--dark,
+body.show-nav .header {
     background-color: rgba(0, 0, 0, 0.9);
 }
 
@@ -88,7 +90,6 @@ ul, ol {
 }
 
 /* Nav */
-
 .nav {
     display: flex;
     height: 100%;
@@ -117,15 +118,75 @@ ul, ol {
 /* Burger */
 
 .burger {
+    width: 30px;
+    height: 23px;
+    position: relative;
     padding: 0;
     background: none;
     border: 0;
 
+    font-size: 0;
+    color: transparent;
+
     display: none;
 }
 
-/* Intro */
+.burger:focus {
+    outline: none;
+}
 
+.burger__line {
+    display: block;
+    width: 30px;
+    height: 2px;
+    margin: 3px 0;
+
+    background: #fff;
+    transition: transform .2s ease-out;
+}
+
+.burger__line:nth-child(1) {
+    width: 20px;
+    margin-left: auto;
+    transform-origin: right;
+    transition: width .2 ease-out;
+}
+
+.burger__line:nth-child(1),
+.burger__line:nth-child(3) {
+    transform-origin: right;
+    transition: width .2 ease-out;
+}
+
+.burger.active
+.burger__line:nth-child(1),
+.burger.active
+.burger__line:nth-child(3) {
+    width: 0;
+}
+
+.burger.active
+.burger__line:nth-child(2),
+.burger.active
+.burger__line:nth-child(4) {
+    position: absolute;
+    left: 0;
+    top: 50%;
+
+    transform-origin: center;
+}
+
+.burger.active
+.burger__line:nth-child(2) {
+    transform: rotate(45deg);
+}
+
+.burger.active
+.burger__line:nth-child(4) {
+    transform: rotate(-45deg);
+}
+
+/* Intro */
 .intro {
     margin-bottom: 30px;
     background: #000 url("../img/intro-bg.jpg") center no-repeat;
@@ -520,6 +581,14 @@ ul, ol {
 
 .reviews {
     position: relative;
+    height: 200px;
+
+    background: url("../img/ajax-loader.gif") no-repeat center;
+}
+
+.reviews.slick-initialized {
+    background: none;
+    height: auto;
 }
 
 .reviews:before,
@@ -591,6 +660,7 @@ ul, ol {
 
 .reviews__item {
     padding: 0 10px;
+    display: none;
 }
 
 .reviews__header {
@@ -1204,7 +1274,7 @@ ul, ol {
     /* Clients */
     .clients {
         flex-direction: column;
-        margin-bottom: 30px;
+        margin-bottom: 60px;
     }
 
     .clients__logos,
@@ -1250,20 +1320,26 @@ ul, ol {
 
     /* Nav */
     .nav {
-        display: none;
         width: 100%;
         height: auto;
         min-height: calc(100vh - 50px);
         flex-direction: column;
         padding-top: 9px;
 
-        background-color: rgba(0, 0, 0, .8);
+        background-color: rgba(0, 0, 0, .85);
 
         position: absolute;
         top: 100%;
         left: 0;
         right: 0;
         z-index: 1;
+
+        transform: translateX(100%);
+        transition: transform .2s ease-out;
+    }
+
+    .nav.show {
+        transform: translateX(0);
     }
 
     .nav__link {
@@ -1454,6 +1530,12 @@ ul, ol {
 
     .client__list-logo {
         margin: 0 auto;
+    }
+
+    .clients-love {
+        display: block;
+        margin-left: 5px;
+        margin-top: 20px;
     }
 
     /* Mission */
