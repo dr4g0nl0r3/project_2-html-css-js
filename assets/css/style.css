@@ -304,6 +304,9 @@ body.show-nav .header {
     background: none;
     border: 0;
     border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 0;
+    appearance: none;
+    box-shadow: none;
 
     font-family: 'PT Sans', sans-serif;
     font-size: 16px;
